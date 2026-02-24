@@ -1,52 +1,51 @@
 # Lidar Processing Toolkit 🚗
 
-这是一个基于 **Streamlit** 开发的 3D 激光雷达（Lidar）点云数据处理工具包，主要用于点云的可视化、背景过滤以及目标检测与跟踪。
+This is a 3D Lidar point cloud processing toolkit developed using **Streamlit**. It is designed for point cloud visualization, background filtering, and object detection and tracking.
 
-## 功能模块
-1.  **背景过滤 (Background Filtering)**: 建立背景模型，过滤静态物体（如地面、墙壁）。
-2.  **目标检测与跟踪 (Object Detection and Tracking)**: 在过滤后的点云中识别并持续跟踪动态物体（如汽车、卡车）。
+## Core Modules
+1.  **Background Filtering**: Build a background model to filter out static objects like the ground and walls.
+2.  **Object Detection and Tracking**: Identify and continuously track dynamic objects (such as cars and trucks) in the filtered point cloud.
 
 ---
 
-## 新电脑安装指南 (Windows)
+## Installation Guide for New Windows Computers
 
-如果您是在一台全新的 Windows 电脑上安装此项目，请按照以下步骤操作：
+If you are installing this project on a brand new Windows computer, please follow these steps:
 
-### 1. 安装 Python
-*   前往 [Python 官网](https://www.python.org/downloads/windows/) 下载并安装 **Python 3.12**。
-*   **重要**：安装时请务必勾选 **"Add Python to PATH"**。
+### 1. Install Python
+*   Go to the [Python Official Website](https://www.python.org/downloads/windows/) and download **Python 3.12**.
+*   **Important**: Make sure to check the box **"Add Python to PATH"** during installation.
 
-### 2. 获取代码
-*   从 GitHub 下载此项目压缩包并解压，或者使用 Git 克隆：
+### 2. Get the Code
+*   Download the project ZIP file from GitHub and extract it, or use Git to clone:
     ```bash
     git clone https://github.com/htc1234567890/LiDAR_07232.git
     cd LiDAR_07232
     ```
 
-### 3. 安装依赖环境
-*   打开 PowerShell 或命令提示符 (CMD)，进入项目根目录。
-*   运行以下命令安装所有必要的库：
+### 3. Install Dependencies
+*   Open PowerShell or Command Prompt (CMD) and navigate to the project root directory.
+*   Run the following command to install all necessary libraries:
     ```bash
     pip install -r requirements.txt
     ```
 
-### 4. 准备数据
-*   将您的 `.pcd` 点云文件放入项目根目录下的 `data/` 文件夹中。
+### 4. Prepare Data
+*   Place your `.pcd` point cloud files into the `data/` folder in the project root.
 
-### 5. 运行程序
-*   在终端输入以下命令启动网页界面：
+### 5. Run the Application
+*   Type the following command in the terminal to start the web interface:
     ```bash
     streamlit run Home.py
     ```
-*   程序会自动在浏览器中打开主页。
+*   The application will automatically open in your default browser.
 
 ---
 
-## 文件结构说明
-*   `Home.py`: 应用程序入口。
-*   `pages/`: 包含背景过滤和目标检测的具体功能页面。
-*   `bg_filter_core.py`: 背景过滤算法核心逻辑。
-*   `detection_logic.py`: 目标检测与跟踪算法核心逻辑。
-*   `data/`: 用于存放输入的 `.pcd` 点云文件（已在 .gitignore 中忽略，需手动放入）。
-*   `outputs/`: 处理结果的输出目录。
-
+## File Structure
+*   `Home.py`: Entry point for the Streamlit application.
+*   `pages/`: Contains specific pages for background filtering and object detection.
+*   `bg_filter_core.py`: Core algorithm logic for background filtering.
+*   `detection_logic.py`: Core algorithm logic for object detection and tracking.
+*   `data/`: Directory for input `.pcd` files (ignored by .gitignore, needs manual input).
+*   `outputs/`: Directory for processing result outputs.
