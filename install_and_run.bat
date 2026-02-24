@@ -25,9 +25,9 @@ if not exist "venv" (
 
 :: 3. Install/Update Dependencies
 echo [2/4] Installing/Updating dependencies...
-call venv\Scripts\activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+:: Explicitly use the python inside venv to install
+venv\Scripts\python.exe -m pip install --upgrade pip
+venv\Scripts\pip.exe install -r requirements.txt
 
 :: 4. Ensure Directory Structure
 echo [3/4] Ensuring data/ and outputs/ directories exist...
@@ -39,8 +39,8 @@ echo [4/4] Starting Streamlit application...
 echo --------------------------------------------------
 echo Tips: Place your .pcd files in the "data" folder.
 echo --------------------------------------------------
-:: Use "python -m streamlit" instead of just "streamlit" to ensure it uses the venv's executable
-python -m streamlit run Home.py
+:: Use the absolute path to the venv python to avoid using system python
+:: The --global.developmentMode=false and browser.gatherUsageStats=false help skip some prompts
+venv\Scripts\python.exe -m streamlit run Home.py --browser.gatherUsageStats=false
 
 pause
-
