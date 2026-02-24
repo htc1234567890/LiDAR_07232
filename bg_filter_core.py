@@ -74,7 +74,9 @@ def remove_ground_grid_minz(points_xyz: np.ndarray, grid=0.5, dz_thresh=0.35):
     keys = np.stack([gx, gy], axis=1)
     k_view = np.ascontiguousarray(keys).view([('gx', np.int32), ('gy', np.int32)])
     uniq, inverse = np.unique(k_view, return_inverse=True)
-    minz = np.full(uniq.shape[0], np.inf, dtype=np.float32)
+    
+    # Use the same dtype as z to avoid broadcasting/dtype issues in np.minimum.at
+    minz = np.full(uniq.shape[0], np.inf, dtype=z.dtype)
     np.minimum.at(minz, inverse, z)
     return z > (minz[inverse] + dz_thresh)
 
