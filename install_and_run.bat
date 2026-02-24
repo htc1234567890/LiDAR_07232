@@ -27,6 +27,8 @@ if not exist "venv" (
 echo [2/4] Installing/Updating dependencies...
 :: Explicitly use the python inside venv to install
 venv\Scripts\python.exe -m pip install --upgrade pip
+:: Install setuptools first to fix pkg_resources issue for pyarrow
+venv\Scripts\python.exe -m pip install setuptools
 venv\Scripts\pip.exe install -r requirements.txt
 
 :: 4. Ensure Directory Structure
