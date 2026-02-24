@@ -39,7 +39,8 @@ echo [4/4] Starting Streamlit application...
 echo --------------------------------------------------
 echo Tips: Place your .pcd files in the "data" folder.
 echo --------------------------------------------------
-streamlit run Home.py
+:: Use "python -m streamlit" instead of just "streamlit" to ensure it uses the venv's executable
+python -m streamlit run Home.py
 
 pause
 
