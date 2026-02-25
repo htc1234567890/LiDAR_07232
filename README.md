@@ -8,7 +8,7 @@ This is a 3D Lidar point cloud processing toolkit developed using **Streamlit**.
 
 ---
 
-## Installation Guide for New Windows Computers
+## Installation Guide
 
 If you are installing this project on a brand new Windows computer, please follow these steps:
 
